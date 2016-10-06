@@ -84,7 +84,7 @@ var scss = require('gulp-sass');
 
   function push() {
     return new Promise((resolve, reject) => {
-      var ps = cp.spawn('git', ['push', 'origin', 'gh-pages']);
+      var ps = cp.spawn('git', ['push', 'origin', 'master']);
 
       ps.stdout.on('data', function(data) { console.log(data.toString()); });
       ps.stderr.on('data', function(data) { console.log(data.toString()); });

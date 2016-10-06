@@ -1,0 +1,18 @@
+{
+  "name": "nicksalloum",
+  "version": "1.0.0",
+  "description": "A website.",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp build",
+    "deploy": "gulp deploy",
+    "serve": "gulp serve"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2",
+    "moment": "^2.15.1"
+  }
+}

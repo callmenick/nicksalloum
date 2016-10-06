@@ -5,6 +5,7 @@ var browserSync = require('browser-sync').create();
 var cp = require('child_process');
 var gulp = require('gulp');
 var moment = require('moment');
+var pug = require('gulp-pug');
 var scss = require('gulp-sass');
 
 (function() {
@@ -20,12 +21,20 @@ var scss = require('gulp-sass');
       .pipe(browserSync.stream());
   });
 
+  gulp.task('views', function() {
+    return gulp.src('./views/*.pug')
+      .pipe(pug())
+      .pipe(gulp.dest('./'))
+      .pipe(browserSync.stream());
+  });
+
   gulp.task('serve', ['styles'], function() {
     browserSync.init({
       server: './'
     });
 
     gulp.watch('./scss/**/*.scss', ['styles']);
+    gulp.watch('./views/**/*.pug', ['views']);
     gulp.watch('./*.html').on('change', browserSync.reload);
   });
 
@@ -42,8 +51,8 @@ var scss = require('gulp-sass');
   });
 
   // build and default tasks
-  gulp.task('build', ['styles']);
-  gulp.task('default', ['styles']);
+  gulp.task('build', ['styles', 'views']);
+  gulp.task('default', ['styles', 'views']);
 
   function addAll() {
     return new Promise((resolve, reject) => {

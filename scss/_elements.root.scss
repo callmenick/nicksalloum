@@ -1,0 +1,15 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  color: $color-grey-700;
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+
+  @include break(md) {
+    font-size: 2.4rem;
+  }
+}

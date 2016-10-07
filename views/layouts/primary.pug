@@ -4,7 +4,12 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width,initial-scale=1.0")
     title Nick Salloum
-    meta(name="description" content="Nick's website.")
+    meta(name="description" content="Nick Salloum's personal website for random projects and life happenings.")
     link(rel="stylesheet", href="css/style.css")
   body
-    block body
+    .Wrapper
+      include ../partials/header.pug
+      .Content
+        main.Main
+          block main
+        include ../partials/footer.pug

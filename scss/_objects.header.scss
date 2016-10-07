@@ -1,0 +1,33 @@
+.Header {
+  padding: $gutter-lg;
+  background-color: $color-brand-500;
+
+  @include break(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 30rem;
+  }
+}
+
+.Header-img {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.1rem $color-brand-700;
+
+  @include break(lg) {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+.Header-nav {
+  margin-top: 2.4rem;
+
+  @include break(lg) {
+    margin-top: 0;
+  }
+}

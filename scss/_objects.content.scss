@@ -1,0 +1,10 @@
+.Content {
+  padding: $gutter-md;
+
+  @include break(lg) {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: $gutter-lg;
+    flex: 1;
+  }
+}

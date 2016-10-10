@@ -22,8 +22,10 @@ var scss = require('gulp-sass');
   });
 
   gulp.task('views', function() {
-    return gulp.src('./views/*.pug')
-      .pipe(pug())
+    return gulp.src(['./views/**/*.pug', '!./views/layouts/**/*', '!./views/partials/**/*'])
+      .pipe(pug().on('error', function(error) {
+        console.log('pug error:', error.message);
+      }))
       .pipe(gulp.dest('./'))
       .pipe(browserSync.stream());
   });
